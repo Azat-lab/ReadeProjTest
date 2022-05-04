@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Client List</title>
+</head>
+<body>
+<div th:align="center">
+    <h1>Client Manager</h1>
+    <a th:href="new"> Add new client</a>
+    <table th:border="1" th:cellpadding="10">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Firstname</th>
+            <th>Surname</th>
+            <th>Sec_surname</th>
+            <th>Address</th>
+            <th>Passport_ser</th>
+            <th>Passport_num</th>
+            <th>Ident_num</th>
+            <th>By_who</th>
+            <th>Birth_place</th>
+            <th>City</th>
+            <th>City_id</th>
+            <th>Tel</th>
+            <th>Email</th>
+            <th>Fam_status</th>
+            <th>Fs_id</th>
+            <th>Work_place</th>
+            <th>Position</th>
+            <th>Residence</th>
+            <th>Residence_id</th>
+            <th>Disability</th>
+            <th>Disability_id</th>
+            <th>Pensioner</th>
+            <th>Duty_bound</th>
+            <th>Month_inc</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="client : ${clientList}">
+            <td th:text="${client.id}"></td>
+            <td th:text="${client.firstname}"></td>
+            <td th:text="${client.surname}"></td>
+            <td th:text="${client.sec_surname}"></td>
+            <td th:text="${client.address}"></td>
+            <td th:text="${client.passport_ser}"></td>
+            <td th:text="${client.passport_num}"></td>
+            <td th:text="${client.by_who}"></td>
+            <td th:text="${client.ident_num}"></td>
+            <td th:text="${client.birth_place}"></td>
+            <td th:text="${client.city}"></td>
+            <td th:text="${client.city_id}"></td>
+            <td th:text="${client.tel}"></td>
+            <td th:text="${client.email}"></td>
+            <td th:text="${client.fam_status}"></td>
+            <td th:text="${client.fs_id}"></td>
+            <td th:text="${client.work_place}"></td>
+            <td th:text="${client.position}"></td>
+            <td th:text="${client.residence}"></td>
+            <td th:text="${client.residence_id}"></td>
+            <td th:text="${client.disability}"></td>
+            <td th:text="${client.disability_id}"></td>
+            <td th:text="${client.pensioner}"></td>
+            <td th:text="${client.duty_bound}"></td>
+            <td th:text="${client.month_inc}"></td>
+            <td><a th:href="@{/edit/{id}(id=${client.id})}">Edit</a></td>
+            <td><a th:href="@{/delete/{id}(id=${client.id})}">Delete</a></td>
+        </tr>
+
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+
+</body>
+</html>

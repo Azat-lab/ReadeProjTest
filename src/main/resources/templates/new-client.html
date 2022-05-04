@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить нового клиента</title>
+</head>
+<body>
+<div th:align="center">
+    <h1>Add new client</h1>
+    <br/>
+    <form action="#" th:action="@{/save}" th:object="${client}" method="post">
+        <table th:border="0" th:cellpadding="5">
+            <tr>
+                <h1>Данные клиента</h1>
+                <input type="text" name="surname" placeholder="Введите фамилию клиента" class="form-control"><br>
+                <input type="text" name="firstname" placeholder="Введите имя клиента" class="form-control"><br>
+                <input type="text" name="sec_surname" placeholder="Введите отчество клиента" class="form-control"><br>
+
+                <h2>Паспортные данные</h2>
+                <input type="text" name="passport_ser" placeholder="Серия паспорта" class="form-control"><br>
+                <input type="text" name="passport_num" placeholder="Номер паспорта" class="form-control"><br>
+                <input type="text" name="by_who" placeholder="Место выдачи паспорта" class="form-control"><br>
+                <input type="text" name="ident_num" placeholder="Идентификационный номер" class="form-control"><br>
+
+                <h3>Контактная информация</h3>
+                <input type="text" name="birth_place" placeholder="Место рождения" class="form-control"><br>
+                <input type="text" name="city" placeholder="Город" class="form-control"><br>
+                <input type="text" name="address" placeholder="Адрес" class="form-control"><br>
+                <input type="text" name="tel" placeholder="Номер телефона" class="form-control"><br>
+                <input type="text" name="email" placeholder="Email@" class="form-control"><br>
+                <input type="text" name="work_place" placeholder="Место работы" class="form-control"><br>
+                <input type="text" name="position" placeholder="Должность" class="form-control"><br>
+
+                <h4>Дополнительная информация</h4>
+                <input type="text" name="fam_status" placeholder="Женат/замужем" class="form-control"><br>
+                <input type="text" name="citizenship" placeholder="Гражданство" class="form-control"><br>
+                <input type="text" name="disability" placeholder="Инвалидность" class="form-control"><br>
+                <input type="checkbox" name="pensioner"><label>Пенсионер</label><br>
+                <input type="text" name="month_inc" placeholder="Ежемесячный доход" class="form-control"><br>
+                <input type="checkbox" name="military"><label>Военнообязанный</label><br>
+
+            </tr>
+            <tr>
+                <button type="submit" class="btn btn-success">Добавить пользователя</button>
+        </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
