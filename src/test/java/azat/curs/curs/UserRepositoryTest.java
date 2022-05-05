@@ -26,10 +26,10 @@ public class UserRepositoryTest {
     @Test
     public void testCreateUser(){
         User user = new User();
-        user.setEmail("azat9011@mail.ru");
-        user.setPassword("050505");
-        user.setFirstname("Arti");
-        user.setLastname("Ann");
+        user.setEmail("john@mail.ru");
+        user.setPassword("12345");
+        user.setFirstname("Max");
+        user.setLastname("Antony");
 
         User savedUser = userRepository.save(user);
 
@@ -39,7 +39,7 @@ public class UserRepositoryTest {
     }
     @Test
     public  void testFindUserByEmail(){
-        String email = "troll@insex.ru";
+        String email = "john@mail.ru";
         User user = userRepository.findByEmail(email);
         assertThat(user).isNotNull();
     }

@@ -3,28 +3,26 @@ package azat.curs.curs.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "logins")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @Column(unique = true, length = 45)
+
     private String email;
 
-    @Column(length = 64)
     private String password;
 
-    @Column(length = 45)
     private String firstname;
-    @Column(length = 45)
-    private String surname;
 
-    public Integer getId() {
+    private String lastname;
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -53,21 +51,21 @@ public class User {
     }
 
     public String getLastname() {
-        return surname;
+        return lastname;
     }
 
-    public void setLastname(String surname) {
-        this.surname = surname;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public User() {
     }
 
-    public User(Integer id, String email, String password, String firstname, String surname) {
+    public User(Long id, String email, String password, String firstname, String lastname) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.firstname = firstname;
-        this.surname = surname;
+        this.lastname = lastname;
     }
 }

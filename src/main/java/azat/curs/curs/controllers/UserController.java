@@ -2,7 +2,6 @@ package azat.curs.curs.controllers;
 
 import azat.curs.curs.models.User;
 import azat.curs.curs.repository.UserRepository;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -23,7 +22,7 @@ public class UserController {
         return "login";
     }
     @GetMapping("/register")
-    public String showSingUpForm(@NotNull Model model){
+    public String showSingUpForm(Model model){
         model.addAttribute("user", new User());
 
         return "signup-form";
